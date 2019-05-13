@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img style="max-width:400px;" *ngIf="Moniteur.photo" [src]="Moniteur.photo">
+    <h3>{{ Moniteur.nom }} {{ Moniteur.prenom }}</h3>
+    <h4>{{ Moniteur.cin }}</h4>
+    <button class="btn btn-default" (click)="onBack()">Retour</button>
+  </div>
+</div>

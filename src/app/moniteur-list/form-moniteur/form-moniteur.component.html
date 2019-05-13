@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h2>Enregistrer un nouveau moniteur</h2>
+    <form [formGroup]="moniteurForm" (ngSubmit)="onSaveMoniteur()">
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom"
+               class="form-control" formControlName="nom">
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prenom</label>
+        <input type="text" id="prenom"
+               class="form-control" formControlName="prenom">
+      </div>
+      <div class="form-group">
+        <label for="cin">Cin</label>
+        <input type="text" id="cin"
+        class="form-control" formControlName="cin">
+      </div>
+      <div class="form-group">
+          <h4>Ajouter une photo</h4>
+          <input type="file" (change)="detectFiles($event)"
+                 class="form-control" accept="image/*">
+          <p class="text-success" *ngIf="fileUploaded">Fichier chargé !</p>
+      </div>
+      <button class="btn btn-success" [disabled]="moniteurForm.invalid || fileIsUploading"
+            type="submit">Enregistrer
+      </button>
+
+    </form>
+  </div>
+</div>

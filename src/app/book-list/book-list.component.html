@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Liste de Condidats</h2>
+    <div class="list-group">
+        <button class="btn btn-primary" (click)="onNewBook()">Nouveau Condidat</button>
+      <button
+        class="list-group-item"
+        *ngFor="let book of books; let i = index"
+        (click)="onViewBook(i)">
+        <h3 class="list-group-item-heading">
+          {{ book.nom }}   {{ book.prenom }}
+          <button class="btn btn-default pull-right" (click)="onDeleteBook(book)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </h3>
+        <p class="list-group-item-text">{{ book.cin }}</p>
+      </button>
+    </div>
+  </div>
+</div>

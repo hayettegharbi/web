@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Liste de moniteurs</h2>
+    <div class="list-group">
+        <button class="btn btn-primary" (click)="onNewMoniteur()">Nouveau Moniteur</button>
+      <button
+        class="list-group-item"
+        *ngFor="let moniteur of moniteurs; let i = index"
+        (click)="onViewmoniteur(i)">
+        <h3 class="list-group-item-heading">
+          {{ moniteur.nom }}   {{ moniteur.prenom }}
+          <button class="btn btn-default pull-right" (click)="onDeleteMoniteur(moniteur)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </h3>
+        <p class="list-group-item-text">{{ moniteur.cin }}</p>
+      </button>
+    </div>
+  </div>
+</div>
